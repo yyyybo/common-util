@@ -30,6 +30,8 @@
         <!-- bach root -->
         <com.qiniu.sdk.version>7.2.2</com.qiniu.sdk.version>
         <commons-io.version>2.5</commons-io.version>
+        <commons-net.version>3.5</commons-net.version>
+        <org.projectlombok.lombok.version>1.16.10</org.projectlombok.lombok.version>
     </properties>
 
     <dependencies>
@@ -94,6 +96,16 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>${commons-net.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${org.projectlombok.lombok.version}</version>
         </dependency>
     </dependencies>
 
