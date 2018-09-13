@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Biz层模板
  *
- * @author yibo.yu
+ * @author 莫问
  */
 public class BizTemplate {
 

@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 慢SQL拦截-监控报警
  *
- * @author yibo.yu
+ * @author 莫问
  */
 @Intercepts({@Signature(type = Executor.class, method = "query", args = {MappedStatement.class, Object.class,
     RowBounds.class, ResultHandler.class}),

@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
 /**
  * Spring反射获取Bean工具类
  *
- * @author yibo.yu
+ * @author 莫问
  */
 @Component
 public class SpringContextsUtil implements ApplicationContextAware {

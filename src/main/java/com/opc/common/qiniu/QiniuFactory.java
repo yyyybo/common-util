@@ -13,7 +13,7 @@ import com.qiniu.util.Auth;
 /**
  * 七牛云存储: 工厂创建
  *
- * @author yuyibo
+ * @author 莫问
  */
 public class QiniuFactory {
 

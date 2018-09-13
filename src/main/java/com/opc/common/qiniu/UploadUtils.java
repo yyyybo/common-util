@@ -20,7 +20,7 @@ import java.io.InputStream;
 /**
  * 图片上传工具类
  *
- * @author yuyibo
+ * @author 莫问
  */
 public class UploadUtils {
 

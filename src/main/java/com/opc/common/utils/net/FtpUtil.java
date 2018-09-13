@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * 通用类: FTP 处理通用
  *
- * @author yuyibo
+ * @author 莫问
  */
 @Data
 public class FtpUtil {

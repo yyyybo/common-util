@@ -3,7 +3,7 @@ package com.opc.common.template;
 /**
  * 业务处理回调
  *
- * @author yibo.yu
+ * @author 莫问
  */
 public abstract class BaseBizProcessCallBackNoResult extends BaseBizProcessCallBack<Void> {
 

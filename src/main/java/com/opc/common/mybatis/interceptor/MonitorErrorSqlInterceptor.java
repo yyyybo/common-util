@@ -18,7 +18,7 @@ import java.util.Properties;
 /**
  * 异常SQL拦截监控
  *
- * @author yibo.yu
+ * @author 莫问
  */
 @Intercepts({
         @Signature(type = Executor.class, method = "query", args = {

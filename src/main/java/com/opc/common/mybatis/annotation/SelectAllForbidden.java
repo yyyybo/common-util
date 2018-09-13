@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * 注解: SELECT_ALL查询拦截
  *
- * @author yibo.yu
+ * @author 莫问
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)

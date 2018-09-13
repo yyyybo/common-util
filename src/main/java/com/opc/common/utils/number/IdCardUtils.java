@@ -16,7 +16,7 @@ import java.util.Date;
 /**
  * 根据 公民身份证号码获取 年龄/性别/生日/生日年 月 日
  *
- * @author yuyibo
+ * @author 莫问
  */
 public class IdCardUtils {
 

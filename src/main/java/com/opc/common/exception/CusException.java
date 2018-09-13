@@ -3,7 +3,7 @@ package com.opc.common.exception;
 /**
  * 自定义异常
  *
- * @author yuyibo
+ * @author 莫问
  */
 public class CusException extends RuntimeException {
 

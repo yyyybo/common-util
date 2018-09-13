@@ -16,7 +16,7 @@ import java.util.Locale;
 /**
  * Response处理相关的工具类
  *
- * @author yibo.yu
+ * @author 莫问
  */
 public class ResponseUtil {
 

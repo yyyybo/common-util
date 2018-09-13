@@ -11,7 +11,7 @@ import java.util.Enumeration;
 /**
  * Request处理相关的工具类
  *
- * @author yibo.yu
+ * @author 莫问
  */
 public final class RequestUtil {
 

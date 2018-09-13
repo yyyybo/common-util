@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
  * <p>
  * log.error("error-message", ExceptionUtil.getStackTrace(e));
  *
- * @author yuyibo
+ * @author 莫问
  */
 public final class ExceptionUtil {
 

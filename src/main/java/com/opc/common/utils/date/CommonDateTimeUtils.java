@@ -17,7 +17,7 @@ import java.util.Date;
 /**
  * 日期工具类
  *
- * @author yibo.yu
+ * @author 莫问
  */
 public class CommonDateTimeUtils {
 
