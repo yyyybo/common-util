@@ -13,7 +13,7 @@ import java.util.Properties;
 /**
  * 拦截UpdateAll或DeleteAll Sql的执行
  *
- * @author Forest10
+ * @author yibo.yu
  * @date 2018/3/16 17:07
  */
 @Intercepts({@Signature(type = Executor.class, method = "update", args = {MappedStatement.class, Object.class})})
