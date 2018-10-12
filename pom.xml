@@ -32,12 +32,19 @@
         <commons-io.version>2.5</commons-io.version>
         <commons-net.version>3.5</commons-net.version>
         <org.projectlombok.lombok.version>1.16.10</org.projectlombok.lombok.version>
+
+        <com.aliyun.oss.version>3.0.0</com.aliyun.oss.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
         <dependency>
@@ -106,6 +113,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${org.projectlombok.lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>${com.aliyun.oss.version}</version>
         </dependency>
     </dependencies>
 
