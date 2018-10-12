@@ -4,7 +4,7 @@
  */
 package com.opc.common.utils.number;
 
-import com.opc.common.exception.CusException;
+import com.opc.common.exception.BizException;
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.ParseException;
@@ -274,7 +274,7 @@ public class IdCardUtils {
     public static String getConstellationByIdNumber(String idNumber) {
 
         if (StringUtils.isEmpty(idNumber)) {
-            throw new CusException("身份证号不能为空");
+            throw new BizException("身份证号不能为空");
         }
 
         // 获取生日 月份 和 天
@@ -309,7 +309,7 @@ public class IdCardUtils {
     public static String getTwelveAnimalsByIdNumber(String idNumber) {
 
         if (StringUtils.isEmpty(idNumber)) {
-            throw new CusException("身份证号不能为空");
+            throw new BizException("身份证号不能为空");
         }
 
         int year = Integer.valueOf(idNumber.substring(6, 10));

@@ -3,7 +3,7 @@
  */
 package com.opc.common.utils.date;
 
-import com.opc.common.exception.CusException;
+import com.opc.common.exception.BizException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.commons.lang3.time.FastDateFormat;
@@ -124,7 +124,7 @@ public class CommonDateTimeUtils {
             return endDate.toEpochDay() - beginDate.toEpochDay();
         } else {
             // 指标监控--日志
-            throw new CusException("日期格式有误====----【日期-开始时间 {}】【日期-结束时间 {}】----====【正确格式为:{}】", fTime, oTime,
+            throw new BizException("日期格式有误====----【日期-开始时间 {}】【日期-结束时间 {}】----====【正确格式为:{}】", fTime, oTime,
                 "yyyy-MM-dd || yyyy-MM-dd hh:mm:ss");
         }
     }

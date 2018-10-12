@@ -4,7 +4,7 @@
  */
 package com.opc.common.qiniu;
 
-import com.opc.common.exception.CusException;
+import com.opc.common.exception.BizException;
 import com.qiniu.common.QiniuException;
 import com.qiniu.http.Response;
 import com.qiniu.storage.BucketManager;
@@ -68,7 +68,7 @@ public class UploadUtils {
         Response response;
         if (null == stream) {
             logger.error("no input data stream");
-            throw new CusException("文件流为空");
+            throw new BizException("文件流为空");
         }
         try {
             byte[] byteData = IOUtils.toByteArray(stream);
@@ -76,7 +76,7 @@ public class UploadUtils {
             return response.bodyString();
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
-            throw new CusException("上传文件失败 {}", e);
+            throw new BizException("上传文件失败 {}", e);
         } finally {
             try {
                 stream.close();
@@ -99,13 +99,13 @@ public class UploadUtils {
         Response response = null;
         if (null == byteData) {
             logger.error("no input byte[] byteData");
-            throw new CusException("no input byte[] byteData");
+            throw new BizException("no input byte[] byteData");
         }
         try {
             response = uploadManager.put(byteData, imgName, QiniuFactory.getUpToken(accessKey, secretKey, buckName));
             return response.bodyString();
         } catch (Exception e) {
-            throw new CusException("上传文件失败 {}", e);
+            throw new BizException("上传文件失败 {}", e);
         }
     }
 
@@ -127,7 +127,7 @@ public class UploadUtils {
             fetch = bucketManager.fetch(url, bucketName, fileName);
         } catch (QiniuException e) {
             logger.warn("七牛上传失败，请检网络地址是否正确【{}】----错误信息{}", url, e);
-            throw new CusException("七牛上传失败，请检网络地址是否正确【{}】----错误信息{}", url, e);
+            throw new BizException("七牛上传失败，请检网络地址是否正确【{}】----错误信息{}", url, e);
         }
         return fetch;
     }

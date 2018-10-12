@@ -5,7 +5,7 @@
 package com.opc.common.utils.net;
 
 import com.google.common.collect.Lists;
-import com.opc.common.exception.CusException;
+import com.opc.common.exception.BizException;
 import lombok.Data;
 import org.apache.commons.net.ftp.*;
 import org.slf4j.Logger;
@@ -87,7 +87,7 @@ public class FtpUtil {
     private FTPClient connectFTPServer() {
 
         if (!init) {
-            throw new CusException("请先实例化对象参数---【FtpUtil】");
+            throw new BizException("请先实例化对象参数---【FtpUtil】");
         }
 
         FTPClient ftp = new FTPClient();
@@ -100,11 +100,11 @@ public class FtpUtil {
             if ((!FTPReply.isPositiveCompletion(ftp.getReplyCode()))) {
                 // 关闭Ftp连接
                 closeFTPClient(ftp);
-                throw new CusException("连接FTP服务器失败,请检查! ReplyCode = : {}", ftp.getReplyCode());
+                throw new BizException("连接FTP服务器失败,请检查! ReplyCode = : {}", ftp.getReplyCode());
             }
 
             if (!ftp.login(userName, password)) {
-                throw new CusException("login failed(登陆失败)");
+                throw new BizException("login failed(登陆失败)");
             }
 
             // 文件类型,默认是ASCII
@@ -122,10 +122,10 @@ public class FtpUtil {
                 try {
                     ftp.disconnect();
                 } catch (Exception e1) {
-                    throw new CusException("连接失败");
+                    throw new BizException("连接失败");
                 }
             }
-            throw new CusException("连接失败");
+            throw new BizException("连接失败");
         }
     }
 
@@ -161,14 +161,14 @@ public class FtpUtil {
                 output = new FileOutputStream(file);
                 boolean result = ftpClient.retrieveFile(remotePath, output);
                 if (!result) {
-                    throw new CusException("从指定FTP路径下载失败  【server】：{} 【remotePath】：{}", server, remotePath);
+                    throw new BizException("从指定FTP路径下载失败  【server】：{} 【remotePath】：{}", server, remotePath);
                 }
                 return true;
             } else {
-                throw new CusException("本地路径不存在或创建本地路径失败 【localPath】：{}", localPath);
+                throw new BizException("本地路径不存在或创建本地路径失败 【localPath】：{}", localPath);
             }
         } catch (Exception e) {
-            throw new CusException("从FTP指定路径下载出现异常 【server】：{} 【remotePath】：{}", server, remotePath, e);
+            throw new BizException("从FTP指定路径下载出现异常 【server】：{} 【remotePath】：{}", server, remotePath, e);
         } finally {
             if (output != null) {
                 try {
@@ -176,7 +176,7 @@ public class FtpUtil {
                 } catch (IOException e) {
                     // 做监控
 
-                    throw new CusException("从FTP指定路径下载出现异常 【server】：{} 【remotePath】：{}", server, remotePath, e);
+                    throw new BizException("从FTP指定路径下载出现异常 【server】：{} 【remotePath】：{}", server, remotePath, e);
                 }
             }
             if (ftpClient.isConnected()) {
@@ -185,7 +185,7 @@ public class FtpUtil {
                 } catch (IOException e) {
                     // 做监控
 
-                    throw new CusException("从FTP指定路径下载完释放连接错误 【server】：{} 【remotePath】：{}", server, remotePath, e);
+                    throw new BizException("从FTP指定路径下载完释放连接错误 【server】：{} 【remotePath】：{}", server, remotePath, e);
                 }
             }
         }
@@ -323,7 +323,7 @@ public class FtpUtil {
                 ftp.disconnect();
             }
         } catch (Exception e) {
-            throw new CusException("关闭FTP连接异常 【{}】", e.getMessage(), e);
+            throw new BizException("关闭FTP连接异常 【{}】", e.getMessage(), e);
         }
     }
 }

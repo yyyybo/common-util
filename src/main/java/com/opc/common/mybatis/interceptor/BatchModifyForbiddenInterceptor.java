@@ -1,6 +1,6 @@
 package com.opc.common.mybatis.interceptor;
 
-import com.opc.common.exception.CusException;
+import com.opc.common.exception.BizException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
@@ -61,7 +61,7 @@ public class BatchModifyForbiddenInterceptor implements Interceptor {
         if (Objects.equals(sqlCommandType, SqlCommandType.UPDATE) || Objects.equals(sqlCommandType,
             SqlCommandType.DELETE)) {
             if (!StringUtils.containsIgnoreCase(sql, WHERE)) {
-                throw new CusException("can`t invoke this sql:" + sql + ";because it does`t include WHERE keyWord!");
+                throw new BizException("can`t invoke this sql:" + sql + ";because it does`t include WHERE keyWord!");
             }
         }
     }
