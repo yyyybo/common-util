@@ -135,7 +135,9 @@ public abstract class BaseBizTemplate<T> {
      */
     private void onBizException(BizException e) {
         
-        // AMonitor.meter(monitorKey + "." + "BizException");
+        // 监控
+
+        // 日志
         logger.warn("执行业务逻辑出现异常 monitoryKey={} , msg:{}", monitorKey, e.getMessage(), e);
         throw e;
     }
@@ -144,7 +146,9 @@ public abstract class BaseBizTemplate<T> {
      * 执行失败的监控
      */
     private void onError(Exception e) {
-        // AMonitor.meter(monitorKey + "." + "UnKnowException");
+        // 监控
+
+        // 日志
         logger.error("执行业务逻辑出现未知异常 monitoryKey={} , msg:{}", monitorKey, e.getMessage(), e);
         throw new UnKnowException(e);
     }

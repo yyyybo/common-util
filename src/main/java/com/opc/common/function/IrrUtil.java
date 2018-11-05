@@ -204,7 +204,7 @@ public class IrrUtil {
             // vj / (1+r)^j
             npv = npv.add(valuej.divide(rpowj, 10, BigDecimal.ROUND_HALF_DOWN));
             // (1+r)^j
-            rpowj = rpowj.multiply(rad);
+            rpowj = rpowj.multiply(rad).setScale(16, BigDecimal.ROUND_HALF_DOWN);
         }
         return npv;
     }
