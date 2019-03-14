@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!--  
+		<context id="testTables" targetRuntime="MyBatis3">
+	-->
+	
+	<!--
+		不想要Example等内容
+		<context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+	 -->
+
+	<context id="testTables" targetRuntime="MyBatis3">
+	<!--<context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">-->
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		
+		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+		<jdbcConnection 
+			driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/test"
+			userId="root"
+			password="123456">
+		</jdbcConnection>
+
+		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
+			NUMERIC 类型解析为java.math.BigDecimal -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+			<!-- 生成的Java文件的编码 -->
+			<property name="javaFileEncoding" value="UTF-8"/>
+			<!-- 格式化java代码 -->
+			<property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>
+			<!-- 格式化XML代码 -->
+			<property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+		</javaTypeResolver>
+
+		<!-- targetProject:生成Entity类的路径 -->
+		<javaModelGenerator targetProject="src/main/java" targetPackage="com.opc.common.mybatis.generator.entities">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+			<!-- 从数据库返回的值被清理前后的空格 -->
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		
+        <!-- targetProject:XXXMapper.xml映射文件生成的路径 -->
+		<sqlMapGenerator targetProject="src/main/java" targetPackage="com.opc.common.mybatis.generator.mapper">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</sqlMapGenerator>
+		
+		<!-- targetPackage：Mapper接口生成的位置 -->
+		<javaClientGenerator type="XMLMAPPER" targetProject="src/main/java" targetPackage="com.opc.common.mybatis.generator.mapper">
+			<!-- enableSubPackages:是否让schema作为包的后缀 -->
+			<property name="enableSubPackages" value="false" />
+		</javaClientGenerator>
+		
+		<!-- 数据库表名字和我们的entity类对应的映射指定 -->
+		<table tableName="project_sign" 	domainObjectName="projectSign"/>
+		<table tableName="project_manager" 		domainObjectName="projectManager"/>
+		<table tableName="project_designer" 		domainObjectName="projectDesigner"/>
+		<table tableName="project_costume_design" 	domainObjectName="projectCostumeDesign"/>
+		<table tableName="project_weak_current" 	domainObjectName="projectWeakCurrent"/>
+		
+		<!-- 有些表的字段需要指定java类型
+		 <table schema="" tableName="">
+			<columnOverride column="" javaType="" />
+		</table> -->
+	</context>
+</generatorConfiguration>
