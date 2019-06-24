@@ -1,10 +1,5 @@
-/*
- * Copyright (C) 2016-2020 imassbank.com Corporation
- *
- */
 package com.opc.common.http;
 
-import com.atour.push.framework.common.MonitorHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ResponseHandler;
@@ -62,7 +57,7 @@ public class LocalHttpClient {
         try {
             return httpClient.execute(request, responseHandler, HttpClientContext.create());
         } catch (Exception e) {
-            MonitorHelper.failMonitor("LocalHttpClientByExecute", Boolean.TRUE);
+            // 监控
             log.error("http执行请求出现未知异常 【{}】", e.getMessage(), e);
         }
         return null;

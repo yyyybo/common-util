@@ -29,7 +29,7 @@ import java.security.NoSuchAlgorithmException;
  * @date 2019-06-10
  */
 @Slf4j
-public class HttpClient {
+class HttpClient {
 
     /**
      * 设置等待数据超时时间3秒钟(接口太慢可以设置大一点)
@@ -65,7 +65,7 @@ public class HttpClient {
     /**
      * 构造器
      */
-    public HttpClient() {
+    HttpClient() {
         try {
             this.httpClient = getClient(getConnManager());
         } catch (Exception e) {

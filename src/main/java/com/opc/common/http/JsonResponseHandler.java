@@ -1,7 +1,4 @@
-/*
- * Copyright (C) 2016-2020 imassbank.com Corporation
- *
- */
+
 package com.opc.common.http;
 
 import com.alibaba.fastjson.JSON;

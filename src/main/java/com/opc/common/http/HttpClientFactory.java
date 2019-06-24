@@ -8,7 +8,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
  * @author 莫问
  * @date 2019-06-10
  */
-public class HttpClientFactory {
+class HttpClientFactory {
 
     private static HttpClient httpClient;
 
@@ -17,11 +17,11 @@ public class HttpClientFactory {
         httpClient = new HttpClient();
     }
 
-    public static HttpClientFactory getInstance() {
+    static HttpClientFactory getInstance() {
         return PluginConfigHolder.HTTP_CLIENT_FACTORY;
     }
 
-    public CloseableHttpClient getHttpClient() {
+    CloseableHttpClient getHttpClient() {
         return httpClient.getHttpClient();
     }
 
