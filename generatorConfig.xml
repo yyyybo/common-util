@@ -7,7 +7,7 @@
 	<!--  
 		<context id="testTables" targetRuntime="MyBatis3">
 	-->
-	
+
 	<!--
 		不想要Example等内容
 		<context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
@@ -15,22 +15,22 @@
 
 <!--	<context id="testTables" targetRuntime="MyBatis3">-->
 	<context id="testTables" targetRuntime="MyBatis3">
+
+        <plugin type="com.opc.common.mybatis.plugin.ClassAnnotationPlugin"/>
+
 		<commentGenerator type="com.opc.common.mybatis.generator.RemarksCommentGenerator">
 		</commentGenerator>
-
-		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
 		<jdbcConnection
-			driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-			connectionURL="jdbc:sqlserver://192.168.16.217:1433;DatabaseName=frontoffice_114_sh_tiyuchangdian"
-			userId="sa"
-			password="XGBI2dvgf5kQrl9W8lsOQcrp">
-		</jdbcConnection>
-<!--		<jdbcConnection-->
-<!--				driverClass="com.mysql.jdbc.Driver"-->
-<!--				connectionURL="jdbc:mysql://localhost:3306/test"-->
-<!--				userId="root"-->
-<!--				password="123456">-->
-<!--		</jdbcConnection>-->
+				driverClass="com.mysql.jdbc.Driver"
+				connectionURL="jdbc:mysql://localhost:3306/test"
+				userId="root"
+				password="123456">
+            <!-- 针对mysql数据库 -->
+            <property name="useInformationSchema" value="true" />
+            <!-- 针对oracle数据库 -->
+            <property name="remarksReporting" value="true" />
+            <property name="characterEncoding" value="utf8"/>
+        </jdbcConnection>
 
 		<!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 
 			NUMERIC 类型解析为java.math.BigDecimal -->
@@ -72,7 +72,7 @@
 			<columnOverride column="" javaType="" />
 		</table> -->
 
-		<table tableName="clean_room" domainObjectName="CleanRoomEntity"
+		<table tableName="hotel_base_config" domainObjectName="HotelBaseConfigEntity"
 			   enableCountByExample="false"
 			   enableUpdateByExample="false"
 			   enableDeleteByExample="false"
@@ -83,42 +83,6 @@
 			   enableSelectByPrimaryKey="true"
 			   enableUpdateByPrimaryKey="true">
 
-		</table>
-
-		<table tableName="rounds_record" domainObjectName="RoundsRecordEntity"
-			   enableCountByExample="false"
-			   enableUpdateByExample="false"
-			   enableDeleteByExample="false"
-			   enableSelectByExample="false"
-			   selectByExampleQueryId="false"
-			   enableDeleteByPrimaryKey="false"
-			   enableInsert="true"
-			   enableSelectByPrimaryKey="true"
-			   enableUpdateByPrimaryKey="true">
-		</table>
-
-		<table tableName="consumer_goods_consumption" domainObjectName="ConsumerGoodsConsumptionEntity"
-			   enableCountByExample="false"
-			   enableUpdateByExample="false"
-			   enableDeleteByExample="false"
-			   enableSelectByExample="false"
-			   selectByExampleQueryId="false"
-			   enableDeleteByPrimaryKey="false"
-			   enableInsert="true"
-			   enableSelectByPrimaryKey="true"
-			   enableUpdateByPrimaryKey="true">
-		</table>
-
-		<table tableName="piece_count" domainObjectName="PieceCountEntity"
-			   enableCountByExample="false"
-			   enableUpdateByExample="false"
-			   enableDeleteByExample="false"
-			   enableSelectByExample="false"
-			   selectByExampleQueryId="false"
-			   enableDeleteByPrimaryKey="false"
-			   enableInsert="true"
-			   enableSelectByPrimaryKey="true"
-			   enableUpdateByPrimaryKey="true">
 		</table>
 	</context>
 </generatorConfiguration>
