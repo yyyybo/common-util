@@ -34,6 +34,7 @@ public class ClassAnnotationPlugin extends PluginAdapter {
         topLevelClass.addImportedType("lombok.Builder");
         topLevelClass.addImportedType("lombok.NoArgsConstructor");
 
+
         //该代码表示在生成class的时候，向topLevelClass添加一个@Setter和@Getter注解
         topLevelClass.addAnnotation("@Data");
         topLevelClass.addAnnotation("@Builder");

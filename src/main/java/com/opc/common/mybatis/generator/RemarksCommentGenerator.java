@@ -100,6 +100,7 @@ public class RemarksCommentGenerator extends DefaultCommentGenerator {
         IntrospectedColumn introspectedColumn) {
         field.addJavaDocLine("/**");
 
+
         String remarks = introspectedColumn.getRemarks();
         if (StringUtility.stringHasValue(remarks)) {
             String[] remarkLines = remarks.split(System.getProperty("line.separator"));
