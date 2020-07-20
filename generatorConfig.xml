@@ -72,7 +72,7 @@
 			<columnOverride column="" javaType="" />
 		</table> -->
 
-		<table tableName="hotel_base_config" domainObjectName="HotelBaseConfigEntity"
+		<table tableName="temp_occupy_room" domainObjectName="tempOccupyRoomEntity"
 			   enableCountByExample="false"
 			   enableUpdateByExample="false"
 			   enableDeleteByExample="false"
