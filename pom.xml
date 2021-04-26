@@ -29,7 +29,7 @@
         <com.alibaba.fastjson.version>1.2.31</com.alibaba.fastjson.version>
         <!-- bach root -->
         <com.qiniu.sdk.version>7.2.2</com.qiniu.sdk.version>
-        <commons-io.version>2.5</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <commons-net.version>3.5</commons-net.version>
         <org.projectlombok.lombok.version>1.16.10</org.projectlombok.lombok.version>
         <aspectj.version>1.8.9</aspectj.version>
