@@ -16,9 +16,9 @@
 <!--	<context id="testTables" targetRuntime="MyBatis3">-->
 	<context id="testTables" targetRuntime="MyBatis3">
 
-        <plugin type="com.opc.common.mybatis.plugin.ClassAnnotationPlugin"/>
+        <plugin type="com.yibo.common.mybatis.plugin.ClassAnnotationPlugin"/>
 
-		<commentGenerator type="com.opc.common.mybatis.generator.RemarksCommentGenerator">
+		<commentGenerator type="com.yibo.common.mybatis.generator.RemarksCommentGenerator">
 		</commentGenerator>
 		<jdbcConnection
 				driverClass="com.mysql.jdbc.Driver"
