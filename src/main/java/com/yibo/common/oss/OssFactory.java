@@ -1,7 +1,4 @@
-/*
- * Copyright (C) 2016-2020 IMassBank Corporation
- *
- */
+
 package com.yibo.common.oss;
 
 import com.aliyun.oss.OSS;
@@ -49,7 +46,7 @@ public class OssFactory {
      * OSS地址
      */
     private final static List<String> PUB_KEY_ADDRESS =
-        Lists.newArrayList("http://gosspublic.alicdn.com/", "https://gosspublic.alicdn.com/");
+            Lists.newArrayList("http://gosspublic.alicdn.com/", "https://gosspublic.alicdn.com/");
 
     /**
      * 创建OSS客户端
@@ -72,7 +69,7 @@ public class OssFactory {
      * @return 对象策略
      */
     public static PostObjectPolicy getPostObjectPolicy(OSS oss, String endpoint, String accessKeyId, String bucket,
-        String key, long expiredSeconds) {
+                                                       String key, long expiredSeconds) {
 
         long expireEndTime = System.currentTimeMillis() + expiredSeconds * 1000;
         Date expiration = new Date(expireEndTime);
@@ -108,13 +105,13 @@ public class OssFactory {
      * @throws IOException           IO异常
      */
     public static boolean verifyOSSCallbackRequest(String autorizationInput, String pubKeyInput, String queryString,
-        String uri, String ossCallbackBody) throws NumberFormatException, IOException {
+                                                   String uri, String ossCallbackBody) throws NumberFormatException, IOException {
 
         byte[] authorization = BinaryUtil.fromBase64String(autorizationInput);
         byte[] pubKey = BinaryUtil.fromBase64String(pubKeyInput);
         String pubKeyAddr = new String(pubKey);
         if (PUB_KEY_ADDRESS.stream()
-            .noneMatch(pubKeyAddr::startsWith)) {
+                .noneMatch(pubKeyAddr::startsWith)) {
             LOGGER.info("pub key addr must be oss addrss ====-----> pubKeyAddr = 【{}】", pubKeyAddr);
             return Boolean.FALSE;
         }
@@ -174,20 +171,20 @@ public class OssFactory {
         try {
             // 定义HttpClient
             HttpClient client = HttpClientBuilder.create()
-                .build();
+                    .build();
             // 实例化HTTP方法
             HttpGet request = new HttpGet();
             request.setURI(new URI(url));
             HttpResponse response = client.execute(request);
 
             in = new BufferedReader(new InputStreamReader(response.getEntity()
-                .getContent()));
+                    .getContent()));
             StringBuffer sb = new StringBuffer();
             String line;
             String nl = System.getProperty("line.separator");
             while ((line = in.readLine()) != null) {
                 sb.append(line)
-                    .append(nl);
+                        .append(nl);
             }
             in.close();
             content = sb.toString();

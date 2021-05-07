@@ -1,7 +1,4 @@
-/*
- * Copyright (C) 2016-2020 IMassBank Corporation
- *
- */
+
 package com.yibo.common.utils.ref;
 
 import org.springframework.beans.BeansException;

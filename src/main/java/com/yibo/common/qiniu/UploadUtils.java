@@ -1,15 +1,12 @@
-/*
- * Copyright (C) 2016-2020 IMassBank Corporation
- *
- */
+
 package com.yibo.common.qiniu;
 
-import com.yibo.common.exception.BizException;
 import com.qiniu.common.QiniuException;
 import com.qiniu.http.Response;
 import com.qiniu.storage.BucketManager;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.storage.model.DefaultPutRet;
+import com.yibo.common.exception.BizException;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,7 +42,7 @@ public class UploadUtils {
         try {
             //调用put方法上传
             Response res = QiniuFactory.createUploadManager()
-                .put(filePath, key, QiniuFactory.getUpToken(accessKey, secretKey, BUCKET_NAME));
+                    .put(filePath, key, QiniuFactory.getUpToken(accessKey, secretKey, BUCKET_NAME));
             //打印返回的信息
             logger.error("七牛上传成功", res.bodyString());
         } catch (QiniuException e) {
@@ -62,7 +59,7 @@ public class UploadUtils {
      * @param imgName 图片名称
      */
     public static String uploadByStream(String accessKey, String secretKey, String buckName, InputStream stream,
-        String imgName) {
+                                        String imgName) {
         UploadManager uploadManager = QiniuFactory.createUploadManager();
 
         Response response;
@@ -93,7 +90,7 @@ public class UploadUtils {
      * @param imgName  图片名称
      */
     public static String uploadByByte(String accessKey, String secretKey, String buckName, byte[] byteData,
-        String imgName) {
+                                      String imgName) {
         UploadManager uploadManager = QiniuFactory.createUploadManager();
 
         Response response = null;
@@ -119,7 +116,7 @@ public class UploadUtils {
      * @param fileName   空间内文件的key(你要上传的文件名，唯一的)
      */
     public static DefaultPutRet uploadImage(String accessKey, String secretKey, String url, String bucketName,
-        String fileName) {
+                                            String fileName) {
 
         BucketManager bucketManager = QiniuFactory.getBucketManager(accessKey, secretKey);
         DefaultPutRet fetch;

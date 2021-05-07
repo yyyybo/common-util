@@ -441,7 +441,7 @@ public abstract class Bolt<O> {
                 future.set(result);
             }
         } catch (Throwable completeException) {
-            log.error("###Atour.Bolt error happens at completeEvaluate,", e);
+            log.error("###Bolt error happens at completeEvaluate,", e);
             e = completeException;
             future.setException(completeException);
         }
@@ -450,7 +450,7 @@ public abstract class Bolt<O> {
             try {
                 applySinkBolts();
             } catch (Throwable t) {
-                log.warn("###Atour.Bolt error happens at applySinkBolts()", t);
+                log.warn("###Bolt error happens at applySinkBolts()", t);
             }
         }
     }

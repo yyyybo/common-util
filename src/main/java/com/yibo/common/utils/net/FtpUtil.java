@@ -1,7 +1,3 @@
-/*
- * Copyright (C) 2016-2020 IMassBank Corporation
- *
- */
 package com.yibo.common.utils.net;
 
 import com.google.common.collect.Lists;
