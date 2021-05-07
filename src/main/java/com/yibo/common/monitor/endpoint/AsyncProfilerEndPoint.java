@@ -51,7 +51,7 @@ public class AsyncProfilerEndPoint {
                 response.getWriter().print(result);
                 return;
             }
-            process = Runtime.getRuntime().exec("/home/relx/tools/async-profiler/async-profiler -d " + duration + " -o svg " + pid);
+            process = Runtime.getRuntime().exec("/home/yibo/tools/async-profiler/async-profiler -d " + duration + " -o svg " + pid);
             process.waitFor(5, TimeUnit.SECONDS);
             try (BufferedReader stdoutReader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
                 StringBuilder sb = new StringBuilder(1024);
